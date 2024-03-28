@@ -1,6 +1,6 @@
 {
   "name": "cli-atm-app-by-huzair",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "This is a CLI based atm machine app",
   "main": "index.js",
   "type": "module",

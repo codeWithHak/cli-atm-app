@@ -21,7 +21,7 @@ if (pinAnswer.pin === myPin) {
       name: "operation",
       message: "Please Select An Option",
       type: "list",
-      choices: ["Withdraw", "Fast Cash", "Check Balance"]
+      choices: ["Withdraw", "Fast Cash", "Check Balance", "Deposit Balance"]
     },
   ]);
 
@@ -49,7 +49,7 @@ if (pinAnswer.pin === myPin) {
     }
   }
 
-  else if (operationAns.operation === "Fast Cash") {
+   else if (operationAns.operation === "Fast Cash") {
     let options = await inquirer.prompt({
       name:"option",
       type:"list",
@@ -65,6 +65,18 @@ if (pinAnswer.pin === myPin) {
   else if (operationAns.operation === "Check Balance"){
     console.log(`Your current balance is ${myBalance}`);
     
+  }
+
+  else if (operationAns.operation === "Deposit Balance") {
+      let depositBalance = await inquirer.prompt({
+        name:"deposit",
+        message:"Enter the amount you want to deposit",
+        type:"number"
+      })
+
+      let newBalance = depositBalance.deposit + myBalance;
+      console.log(`${depositBalance.deposit} has been deposited in your account now your balance is ${newBalance}`);
+      
   }
 
 } else {
